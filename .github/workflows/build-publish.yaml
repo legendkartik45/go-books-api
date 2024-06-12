@@ -34,3 +34,20 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.build-and-push.outputs.digest }}
+
+  generate-docs:
+        runs-on: ubuntu-latest
+        
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v4
+        
+          - name: Install dependencies
+            run: |
+              # Install documentation generation tool (e.g., godoc)
+              go install golang.org/x/tools/cmd/godoc@latest
+        
+          - name: Generate documentation
+            run: |
+              # Generate documentation (e.g., godoc -http=:6060)
+              godoc -http=:6060 -index
