@@ -1,0 +1,10 @@
+# Binaries
+main
+
+# IDE/editor files
+*.idea
+*.vscode
+*.env
+
+# Other files
+.DS_Store
