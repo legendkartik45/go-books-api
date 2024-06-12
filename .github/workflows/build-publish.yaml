@@ -30,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: leegndkartik/go-books-api:latest
+          tags: legendkartik/go-books-api:latest
 
       - name: Image digest
         run: echo ${{ steps.build-and-push.outputs.digest }}
