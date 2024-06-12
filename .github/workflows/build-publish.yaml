@@ -41,6 +41,11 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
+
+          - name: Install Go
+            uses: actions/setup-go@v2
+            with:
+                go-version: '1.17'
         
           - name: Install dependencies
             run: |
@@ -49,5 +54,6 @@ jobs:
         
           - name: Generate documentation
             run: |
+              go get golang.org/x/tools/cmd/godoc@latest
               # Generate documentation (e.g., godoc -http=:6060)
               godoc -http=:6060 -index
